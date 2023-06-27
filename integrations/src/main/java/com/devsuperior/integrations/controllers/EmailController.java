@@ -14,13 +14,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class EmailController {
 
     @Autowired
-    EmailService service;
+    private EmailService service;
 
     @PostMapping
     public ResponseEntity<Void> send(@RequestBody EmailDTO dto) {
         service.sendEmail(dto);
         return ResponseEntity.noContent().build();
     }
-
 
 }
